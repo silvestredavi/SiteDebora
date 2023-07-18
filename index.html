@@ -112,15 +112,19 @@
 					<input type="hidden" id="_subject" name="_subject" value="Formulário do Site">
 					<div class="row">
 						<div class="col-6 text-start">
-							<label for="name" class="form-label required">Nome completo:</label>
+							<label for="Nome" class="form-label required">Nome completo:</label>
 							<input class="form-control form-control-solid" placeholder="Digite seu nome..." type="text" name="Nome" id="name" required>
 						</div>
-						<div class="col-6 text-start">
-							<label for="email" class="form-label required">Email:</label>
+						<div class="col-6 text-start email">
+							<label for="Email" class="form-label required">Email:</label>
 							<input class="form-control form-control-solid col-6" placeholder="Digite seu email..." type="text" name="Email" id="email" required>
 						</div>
-						<div class="text-start mt-3">
-							<label for="numProcesso" class="form-label">Número do processo (se houver):</label>
+						<div class="col-6 text-start mt-3">
+							<label for="Telefone" class="form-label required">Telefone:</label>
+							<input class="form-control form-control-solid col-6" placeholder="Digite o seu número de telefone" type="text" name="Telefone" id="phone" data-inputmask="'mask': ['(99) 9999-9999', '(99) 99999-9999']">
+						</div>
+						<div class="col-6 text-start mt-3">
+							<label for="Processo" class="form-label">Número do processo (se houver):</label>
 							<input class="form-control form-control-solid col-6" placeholder="Digite o número do processo do assunto referido" type="text" name="Processo" id="numProcesso">
 						</div>
 						<div class="mt-3 text-start">
@@ -171,8 +175,15 @@
 		</div>
     </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Inclua a biblioteca Input Mask -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		$("#phone").inputmask();
+	})
+</script>
 </body>
 </html>
