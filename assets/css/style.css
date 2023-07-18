@@ -220,4 +220,16 @@ a:hover{
 	.txt2-sec-1{
 		display: none;
 	}
+
+	.order-last img{
+		width: 250px;
+	}
+	.order-last{
+		justify-content: center;
+		display: flex
+	}
+
+	.txt-sobre {
+		font-size: 0.8rem;
+	}
 }
