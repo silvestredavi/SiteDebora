@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+	font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+	width: 1520px;
+}
+
+.ft-art{
+	font-family: 'Times New Roman', Times, serif;
+	line-height: 1.2em;
+}
+
+.navbar {
+    background-color: #3d0101;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	z-index: 999;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 5px;
+	font-size: 1.2rem;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px !important;
+}
+
+.navbar .navbar-brand img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.form-label{
+	font-weight: 600;
+}
+
+a:hover{
+	color: white !important;
+} 
+
+.sec-1{
+	background: url(../img/debora/natureza-morta-com-a-balanca-da-justica.jpg) no-repeat;
+	background-size: cover;
+	min-height: 800px;
+	margin-top: 50px; /* Adicionado para compensar o padding-top do corpo da página */
+}
+
+.txt-sec-1{
+	font-size: 3em;
+}
+
+.txt2-sec-1{
+	font-size: 4em;
+}
+
+.btn-whatsapp{
+	border-radius: 20px;
+	background-color: #13E859;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 8px 15px;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn-whatsapp:hover{
+	background-color: #0fb747;
+}
+
+.sec-3{
+	background-color: #BCBCBC;
+	scroll-margin-top: 70px; /* Ajuste o valor conforme necessário para garantir que a seção seja exibida completamente */
+}
+
+.sec-2{
+	background-color: #4F2C1D;
+	scroll-margin-top: 140px; /* Ajuste o valor conforme necessário para garantir que a seção seja exibida completamente */
+}
+
+.sec-sobre-mim{
+	background-color: #E8C6AC ;
+	scroll-margin-top: 120px; /* Ajuste o valor conforme necessário para garantir que a seção seja exibida completamente */
+}
+
+.txt-sobre{
+	font-size: 1.1rem;
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #3d0101;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 500px){
+	body{
+		font-size: 8px;
+	}
+
+	.sec-1{
+		min-height: 43vh;
+		margin-top: 50px; /* Adicionado para compensar o padding-top do corpo da página */
+		padding-top: 60px !important;
+	}
+
+	.sec-1 .col-6 {
+		margin-left: 0 !important;
+		padding-left: 0 !important;
+		width: 75%;
+	}
+	
+	.sec-1 .container{
+		padding-left: 0 !important;
+	}
+
+	.txt-sobre{
+		font-size: 1rem;
+	}
+
+	#loc .col-6, #loc .col-8{
+		width: 100%;
+		padding-left: 0 !important;
+	}
+
+	.map {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	.form-label, .btn{
+		font-size: 1.2rem;
+	}
+
+	.content-footer{
+		padding: 0 !important;
+		font-size: 1.1rem;
+	}
+	
+
+
+}
