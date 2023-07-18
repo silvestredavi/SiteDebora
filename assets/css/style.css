@@ -111,15 +111,16 @@ a:hover{
     text-align: center;
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
 	body{
 		font-size: 8px;
+		width: 100%;
 	}
 
 	.sec-1{
 		min-height: 43vh;
 		margin-top: 50px; /* Adicionado para compensar o padding-top do corpo da página */
-		padding-top: 60px !important;
+		padding-top: 35px !important;
 	}
 
 	.sec-1 .col-6 {
@@ -138,13 +139,32 @@ a:hover{
 
 	#loc .col-6, #loc .col-8{
 		width: 100%;
+		padding: 0 !important;
+		font-size: 1rem !important;
+	}
+
+	#loc .col-6 .ms-5{
 		padding-left: 0 !important;
+		margin: 0 !important;
+	}
+
+
+	.sec-sobre-mim .container .col-6{
+		width: 100%;
+	}
+
+	.row{
+		margin: 0;
 	}
 
 	.map {
 		margin-top: 2rem;
 		display: flex;
 		justify-content: center;
+	}
+
+	.map iframe{
+		height: 300px;
 	}
 
 	.form-label, .btn{
@@ -154,8 +174,50 @@ a:hover{
 	.content-footer{
 		padding: 0 !important;
 		font-size: 1.1rem;
+		flex-wrap: wrap;
+		justify-content: center !important;
 	}
-	
+
+	.content-footer p {
+		margin-left: 0 !important;
+	}
+
+	form .col-6 {
+		width: 100%;
+	}
+
+	.sec-3 .container div.px-5 {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.ft-art{
+		display: none;
+	}
+	.sec-1 .col-6 {
+		width: 100%;
+	}
+	.sec-1 {
+		min-height: 30vh;
+		margin-top: 100px;
+	}
 
 
+}
+
+@media (max-width: 395px){
+	.sec-1 {
+		min-height: 37vh;
+		margin-top: 100px;
+		padding-top: 25px !important;
+		padding-bottom: 20px !important;
+	}
+
+	.btn-whatsapp{
+		font-size: 12px !important;
+	}
+
+	.txt2-sec-1{
+		display: none;
+	}
 }
