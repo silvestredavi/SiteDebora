@@ -4,6 +4,7 @@ body {
 	font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
 	width: 1520px;
+	visibility: hidden;
 }
 
 .ft-art{
