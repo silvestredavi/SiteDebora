@@ -42,7 +42,7 @@
 		</div>
 	</nav>
 
-    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio">
+    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio" data-bg-src="assets/img/debora/natureza-morta-com-a-balanca-da-justica.jpg">
 		<div class="container px-5">
 			<div class="col-6 text-start align-content-between d-flex flex-wrap mx-5">
 				<div class="">
@@ -83,7 +83,7 @@
 						<path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z"/>
 						<path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
 					</svg>
-					R. Antonio de Castro-Leite, 49 - Sala 1 Centro, Jambeiro - SP, 12270-000
+					R. Antonio de Castro-Leite, 49 - Sala 1 - Centro, Jambeiro - SP, 12270-000
 				</div>
 				<div class="text-start col-6 text-light mt-4 fs-5 ms-5">
 					<a href="mailto:deboraisi@adv.oabsp.org.br" style="text-decoration: none;" class="text-light">
@@ -99,7 +99,14 @@
 				</div>
 			</div>
 			<div class="col-6 map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.6432203542777!2d-45.694574324804655!3d-23.256066679010864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdac1e212ba563%3A0xedcc34c76eea307d!2sR.%20Antonio%20de%20Castro-Leite%2C%2049%20-%20Centro%2C%20Jambeiro%20-%20SP%2C%2012270-000!5e0!3m2!1spt-BR!2sbr!4v1689450540982!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe
+					width="600"
+					height="450"
+					frameborder="0" style="border:0"
+					referrerpolicy="no-referrer-when-downgrade"
+					src="https://www.google.com/maps/embed/v1/place?q=Rua%20Antonio%20de%20Castro-Leite%2C%2049%20-%20Centro%2C%20Jambeiro%20-%20SP%2C%2012270-000&key=AIzaSyDmpBqfkTMn0dufPc2ZrYk9xCMGoxeb4Yw"
+					allowfullscreen>
+				</iframe>
 			</div>
 		</div>
     </div>
@@ -184,6 +191,45 @@
 	$(document).ready(function(){
 		$("#phone").inputmask();
 	})
+	window.addEventListener('load', function () {
+		debugger
+		const section = document.querySelectorAll('.sec-1')[0];
+
+		// Função para carregar uma imagem em segundo plano
+		function preloadImage(url) {
+			return new Promise((resolve, reject) => {
+				const img = new Image();
+				img.src = url;
+				img.onload = resolve;
+				img.onerror = reject;
+			});
+		}
+
+		// Array para armazenar as promessas de carregamento das imagens
+		const imageLoadPromises = [];
+
+		// Loop para carregar cada imagem em segundo plano
+		const bgSrc = section.getAttribute('data-bg-src');
+		if (bgSrc) {
+			imageLoadPromises.push(preloadImage(bgSrc));
+		}
+
+		// Quando todas as imagens forem carregadas, atribua-as como background das seções
+		Promise.all(imageLoadPromises)
+			.then(() => {
+			const bgSrc = section.getAttribute('data-bg-src');
+
+			if (bgSrc) {
+				section.style.backgroundImage = `url('${bgSrc}')`;
+			}
+
+			// Aqui você pode mostrar a página, já que todas as imagens foram carregadas
+			document.body.style.visibility = 'visible';
+			})
+			.catch((error) => {
+				console.error('Erro ao carregar as imagens de background:', error);
+			});
+		});
 </script>
 </body>
 </html>
