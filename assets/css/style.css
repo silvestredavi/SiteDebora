@@ -4,7 +4,6 @@ body {
 	font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
 	width: 1520px;
-	visibility: hidden;
 }
 
 .ft-art{
@@ -48,7 +47,7 @@ a:hover{
 } 
 
 .sec-1{
-	/* background: url(../img/debora/natureza-morta-com-a-balanca-da-justica.jpg) no-repeat; */
+	background: url("../img/debora/natureza-morta-com-a-balanca-da-justica.webp") no-repeat;
 	background-size: cover;
 	min-height: 800px;
 	margin-top: 50px; /* Adicionado para compensar o padding-top do corpo da página */

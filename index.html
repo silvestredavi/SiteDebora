@@ -42,7 +42,7 @@
 		</div>
 	</nav>
 
-    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio" data-bg-src="assets/img/debora/natureza-morta-com-a-balanca-da-justica.jpg">
+    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio">
 		<div class="container px-5">
 			<div class="col-6 text-start align-content-between d-flex flex-wrap mx-5">
 				<div class="">
@@ -191,45 +191,6 @@
 	$(document).ready(function(){
 		$("#phone").inputmask();
 	})
-	window.addEventListener('load', function () {
-		debugger
-		const section = document.querySelectorAll('.sec-1')[0];
-
-		// Função para carregar uma imagem em segundo plano
-		function preloadImage(url) {
-			return new Promise((resolve, reject) => {
-				const img = new Image();
-				img.src = url;
-				img.onload = resolve;
-				img.onerror = reject;
-			});
-		}
-
-		// Array para armazenar as promessas de carregamento das imagens
-		const imageLoadPromises = [];
-
-		// Loop para carregar cada imagem em segundo plano
-		const bgSrc = section.getAttribute('data-bg-src');
-		if (bgSrc) {
-			imageLoadPromises.push(preloadImage(bgSrc));
-		}
-
-		// Quando todas as imagens forem carregadas, atribua-as como background das seções
-		Promise.all(imageLoadPromises)
-			.then(() => {
-			const bgSrc = section.getAttribute('data-bg-src');
-
-			if (bgSrc) {
-				section.style.backgroundImage = `url('${bgSrc}')`;
-			}
-
-			// Aqui você pode mostrar a página, já que todas as imagens foram carregadas
-			document.body.style.visibility = 'visible';
-			})
-			.catch((error) => {
-				console.error('Erro ao carregar as imagens de background:', error);
-			});
-		});
 </script>
 </body>
 </html>
