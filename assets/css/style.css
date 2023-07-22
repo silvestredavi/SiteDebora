@@ -3,7 +3,7 @@ body {
     padding: 0;
 	font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
-	width: 1520px;
+	width: 100%;
 }
 
 .ft-art{
@@ -28,9 +28,6 @@ body {
     text-decoration: none;
     margin-right: 5px;
 	font-size: 1.2rem;
-}
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1320px !important;
 }
 
 .navbar .navbar-brand img {
@@ -110,10 +107,20 @@ a:hover{
     text-align: center;
 }
 
+@media (max-width: 1260px) and (min-width: 600px){
+	body{
+		width: 1520px;
+	}
+
+	.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+		max-width: 1320px !important;
+	}
+
+}
+
 @media (max-width: 600px){
 	body{
 		font-size: 8px;
-		width: 100%;
 	}
 
 	.sec-1{
