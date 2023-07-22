@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;700&family=Signika+Negative:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -42,7 +43,7 @@
 		</div>
 	</nav>
 
-    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio">
+    <div class="section sec-1 d-flex align-content-center flex-wrap" id="inicio" style="background-image: url('/assets/img/debora/natureza-morta-com-a-balanca-da-justica.webp');">
 		<div class="container px-5">
 			<div class="col-6 text-start align-content-between d-flex flex-wrap mx-5">
 				<div class="">
@@ -115,7 +116,7 @@
 		<div class="container">
 			<div class="px-5 mx-5">
 				<h2 class="text-start fw-bold fs-1">Entre em contato</h2>
-				<form action="https://formspree.io/f/xleyddeq" method="POST">
+				<form action="https://formspree.io/f/xleyddeq" method="POST" target="formTarget">
 					<input type="hidden" id="_subject" name="_subject" value="Formulário do Site">
 					<div class="row">
 						<div class="col-6 text-start">
@@ -143,7 +144,7 @@
 						</div>
 					</div>
 				</form>
-				
+				<iframe id="formIframe" style="display: none;"></iframe>
 			</div>
 		</div>
     </div>
@@ -185,11 +186,30 @@
 <!-- Inclua a biblioteca Input Mask -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script src="sweetalert2.all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 <script>
 	$(document).ready(function(){
 		$("#phone").inputmask();
+
+		function abrirAbaEFechar() {
+			var formWindow = window.open('', 'formTarget');
+			document.forms[0].submit();
+			setTimeout(function() {
+				formWindow.close();
+				Swal.fire(
+					'Sucesso',
+					'Seu formulário foi enviado, aguarde o contato!',
+					'success'
+				)
+			}, 50);
+		}
+
+		document.forms[0].onsubmit = function() {
+			abrirAbaEFechar();
+			return false;
+		};
 	})
 </script>
 </body>
